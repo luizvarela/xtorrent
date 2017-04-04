@@ -5,9 +5,7 @@ defmodule Xtorrent do
     import Supervisor.Spec, warn: false
 
     children = [
-       worker(Xtorrent.Producers.A, []),
-       worker(Xtorrent.Producers.B, []),
-       worker(Xtorrent.Producers.C, []),
+       worker(Xtorrent.Servers.EztvCrawler, [])
     ]
 
     opts = [strategy: :one_for_one, name: Xtorrent.Supervisor]

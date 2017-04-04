@@ -1,8 +1,8 @@
-defmodule Xtorrent.Eztv.Parser do
+defmodule Xtorrent.Crawlers.EZTVParser do
   @url "https://eztv.ag/"
 
   def paginated_links do
-    1..10 |> Enum.map(fn i -> "https://eztv.ag/page_#{i}" end)
+    1..2 |> Enum.map(fn i -> {:page_link, "https://eztv.ag/page_#{i}"} end)
   end
 
   def torrent_links(body) do
